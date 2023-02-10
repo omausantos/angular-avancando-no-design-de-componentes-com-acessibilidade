@@ -1,27 +1,34 @@
 <h1>Angular: avançando no design de componentes com acessibilidade</h1>
 <p>Página básica para teste do Modal</p>
-<button mat-raised-button color="primary">Abrir modal</button>
-<p>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput />
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Sobre nome</mat-label>
-    <input matInput />
-  </mat-form-field>
-</p>
+<button mat-raised-button color="primary" class="open-modal" (click)="show()">
+  Abrir modal
+</button>
 
-<p>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Idade</mat-label>
-    <input matInput />
-  </mat-form-field>
-</p>
+<ng-template #modal>
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [value]="firstName" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Sobre nome</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </p>
 
-<div class="buttons">
-  <button mat-raised-button color="primary">Enviar</button>
-  <button mat-raised-button color="warn">Cancelar</button>
-</div>
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Idade</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </p>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary">Enviar</button>
+    <button mat-raised-button color="warn" (click)="modalRef.close()">
+      Cancelar
+    </button>
+  </div>
+</ng-template>
