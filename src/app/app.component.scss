@@ -1,0 +1,15 @@
+.example-full-width {
+  width: 100%;
+}
+
+.open-modal {
+  margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+    :first-child {
+        margin-right: 10px;
+    }
+}
