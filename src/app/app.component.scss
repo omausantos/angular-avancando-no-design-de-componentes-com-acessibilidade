@@ -1,0 +1,12 @@
+.example-full-width {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+    :first-child {
+        margin-right: 10px;
+    }
+}
